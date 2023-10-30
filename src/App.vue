@@ -18,8 +18,7 @@ export default {
 }
 
 html {
-  /* font-family: 'Roboto', sans-serif; */
-  font-family: 'monospace';
+  font-family: 'Roboto', sans-serif;
 }
 
 body {

@@ -1,4 +1,30 @@
 <template>
   <section>FILTER</section>
-  <section>LIST OF COACHES</section>
+  <section>
+    <div class="control">
+      <button>Refresh</button>
+      <router-link to="/register">Register as Coach</router-link>
+    </div>
+    <ul v-if="hasCoachees">
+      <li v-for="coach in filteredCoaches" :key="coach.id">
+        {{ coach.firstName }}
+      </li>
+    </ul>
+    <h3 v-else>No coaches found.</h3>
+  </section>
 </template>
+<script>
+export default {
+  computed: {
+    filteredCoaches() {
+      return this.$store.getters['coaches/coaches'];
+    },
+    hasCoachees() {
+      return this.$store.getters['coaches/hasCoaches'];
+    },
+  },
+  mounted() {
+    console.log('coaches', this.filteredCoaches);
+  },
+};
+</script>
