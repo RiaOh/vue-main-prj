@@ -28,7 +28,6 @@
     <div class="form-control" :class="{ invalid: !description.isValid }">
       <label for="description">Description</label>
       <textarea
-        type="text"
         id="description"
         rows="5"
         v-model.trim="description.val"
