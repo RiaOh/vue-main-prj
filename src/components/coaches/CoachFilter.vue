@@ -26,11 +26,14 @@ export default {
   methods: {
     setFilter(event) {
       const inputId = event.target.id;
+      console.log('inputId', inputId);
       const isActive = event.target.checked;
+      console.log('isActive', isActive);
       const updatedFilters = {
         ...this.filters,
         [inputId]: isActive,
       };
+      console.log('updatedFilters', updatedFilters);
       this.filters = updatedFilters;
       this.$emit('change-filter', updatedFilters);
     },

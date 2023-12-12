@@ -1,5 +1,4 @@
 <template>
-  <!-- <section>FILTER</section> -->
   <section>
     <coach-filter @change-filter="setFilters"></coach-filter>
   </section>

@@ -30,11 +30,11 @@ a {
 
 header {
   width: 100%;
-  height: 5rem;
+  height: 5rem; /* 16px * 5 = 80px */
   background-color: #3d008d;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* item들이 중심축의 중간으로 오도록 */
+  align-items: center; /* item들이 cross axis를 기준으로 중간으로 오도록 */
 }
 
 header a {
