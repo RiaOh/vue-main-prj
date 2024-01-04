@@ -135,6 +135,7 @@ export default {
         this.formIsValid = false;
       }
       if (this.areas.val.length === 0) {
+        //전문분야가 입력되지 않았다는 뜻
         this.areas.isValid = false;
         this.formIsValid = false;
       }
@@ -143,7 +144,7 @@ export default {
       this.validForm();
 
       if (!this.formIsValid) {
-        return;
+        return; //form이 유효하지않으면, 나머지 메서드가 실행되지 않게 한다.
       }
       const formData = {
         first: this.firstName.val,
