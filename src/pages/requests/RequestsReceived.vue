@@ -20,6 +20,9 @@
 import RequestItem from '../../components/requests/RequestItem.vue';
 export default {
   components: { RequestItem },
+  data() {
+    return {};
+  },
   computed: {
     receivedRequests() {
       return this.$store.getters['requests/requests'];
@@ -27,6 +30,12 @@ export default {
     hasRequests() {
       return this.$store.getters['requests/hasRequests'];
     },
+  },
+  methods: {
+    loadRequeests() {},
+  },
+  created() {
+    this.loadRequeests();
   },
 };
 </script>

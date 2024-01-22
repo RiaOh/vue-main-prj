@@ -9,7 +9,6 @@ export default {
       description: data.desc,
       hourlyRate: data.rate,
     };
-    console.log('userId', userId);
     const response = await fetch(
       `https://vue-main-prj-01-9bcae-default-rtdb.firebaseio.com/coaches/${userId}.json`,
       {
@@ -17,7 +16,6 @@ export default {
         body: JSON.stringify(coachData),
       }
     );
-    console.log('response', response);
 
     // const responseData = await response.json();
     if (!response.ok) {
@@ -30,10 +28,12 @@ export default {
     const response = await fetch(
       `https://vue-main-prj-01-9bcae-default-rtdb.firebaseio.com/coaches.json`
     ); //coaches노드에 있는 모든 코치를 페칭.
+    console.log('response', response);
     const responseData = await response.json();
 
     if (!response.ok) {
-      //..오류처리구문. 지금은 pass.
+      const error = new Error(responseData.message || 'Failed to fetch!');
+      throw error;
     }
     //여기서 요구하는 형식에 맞도록, 페칭하는 데이터를 변환해야한다.
     //Firebase에서 데이터를 가져올 때, 객체를 통째로 가져오는데,
